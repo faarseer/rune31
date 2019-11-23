@@ -1,0 +1,22 @@
+{
+	"Magic":[
+		{
+			"class": "attack",
+			"name": "fire ball",
+			"collection" : "Base",
+			"forme_rune" : "circle",
+			"element_rune" : "fire",
+			"cast_rune" : "concentration",
+			"Description": "fire ball."
+		},
+		{
+			"class": "attack",
+			"name": "fire ball",
+			"collection" : "Base",
+			"forme_rune" : "circle",
+			"element_rune" : "ice",
+			"cast_rune" : "concentration",
+			"Description": "ice ball."
+		}
+	]
+}

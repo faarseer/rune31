@@ -1,0 +1,60 @@
+{
+	"Runes": [
+		{
+			"rclass": "Element_Rune",
+			"name": "Fire",
+			"collection": "Base",
+			"description": "component of this world, represents fire.",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Element_Rune",
+			"name": "Ice",
+			"collection": "Base",
+			"description": "component of this world, represents ice.",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Element_Rune",
+			"name": "Lightning",
+			"collection": "Base",
+			"description": "component of this world, represents lightning.",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Element_Rune",
+			"name": "Earth",
+			"collection": "Base",
+			"description": "component of this world, represents earth.",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "circle",
+			"collection": "Base",
+			"description": "represents cohesion.",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "concentration",
+			"collection": "Base",
+			"description": "represents beginner's concentration.",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "RightArrow",
+			"collection": "Base",
+			"description": "represents stretch(extend) rightwards",
+			"runePath": "./"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "UpArrow",
+			"collection": "Lock",
+			"description": "represents stretch(extend) upwards",
+			"runePath": "./"
+		}
+	]	
+}

@@ -1,0 +1,46 @@
+{
+	"Rune":[
+		{
+			"rclass": "Element_Rune",
+			"name": "Fire",
+			"collection": "Base",
+			"Description": "component of this world, represents fire."
+		},
+		
+		{
+			"rclass": "Element_Rune",
+			"name": "Ice",
+			"collection": "Base",
+			"Description": "component of this world, represents ice."
+		},
+		
+		{
+			"rclass": "Element_Rune",
+			"name": "Lightning",
+			"collection": "Base",
+			"Description": "component of this world, represents lightning."
+		},
+
+		{
+			"rclass": "Element_Rune",
+			"name": "Earth",
+			"collection": "Base",
+			"Description": "component of this world, represents earth."
+		},
+		
+		{
+			"rclass": "Forme_Rune",
+			"name": "circle",
+			"collection": "Base",
+			"Description": "represents cohesion."
+		},
+
+		{
+			"rclass": "Cast_Rune",
+			"name": "concentration",
+			"collection": "Base",
+			"Description": "represents beginner's concentration"
+		}
+		
+	]
+}

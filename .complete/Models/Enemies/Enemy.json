@@ -1,0 +1,13 @@
+{
+	"Enemy":[
+		{
+			"class": "Fire",
+			"name": "dragon",
+			"dmg": 100,
+			"penetration": 100,
+			"resistance": 100,
+			"skill": Null,
+			"Description": "dragon."
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"Equipment": [
+		{
+			"class": "wand",
+			"name": "starter wand",
+			"collection": "Base",
+			"penetration": 0,
+			"resistance": 0,
+			"spec": None
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"Hero":[
+		{
+			"class": "",
+			"name": "Beginner",
+			"collection": "Base",
+			"Description": "u r beginner, play hard."
+		},
+		{
+			"class": "",
+			"name": "Pig",
+			"collection": "collectible",
+			"Description": "u r pig, more health."
+		}
+	]
+}
