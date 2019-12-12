@@ -14,11 +14,10 @@ public class TotalPool : MonoBehaviour
 
 	void Awake()
 	{
-		filepath = Application.dataPath + "/Scripts/GameData/" + "Rune.json";
+		filepath = Application.dataPath + "/rune31/Scripts/GameData/" + "Rune.json";
 		jsons = File.ReadAllText(filepath);
-		Debug.Log(jsons);
 		totalpool = JsonConvert.DeserializeObject<_Runes>(jsons);
-		Debug.Log(totalpool.Runes[0].name);
-		Debug.Log(totalpool.Runes.Count);
+		//Debug.Log(totalpool.Runes[0].name);
+		//Debug.Log(totalpool.Runes.Count);
 	}
 }
