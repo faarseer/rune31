@@ -5,56 +5,63 @@
 			"name": "Fire",
 			"collection": "Base",
 			"description": "component of this world, represents fire.",
-			"runePath": "./"
+			"sprite": "Sprites/Elemental_Fire"
 		},
 		{
 			"rclass": "Element_Rune",
 			"name": "Ice",
 			"collection": "Base",
 			"description": "component of this world, represents ice.",
-			"runePath": "./"
+			"sprite": "Sprites/Elemental_Water"
 		},
 		{
 			"rclass": "Element_Rune",
 			"name": "Lightning",
 			"collection": "Base",
 			"description": "component of this world, represents lightning.",
-			"runePath": "./"
+			"sprite": "Sprites/Elemental_Lightning"
 		},
 		{
 			"rclass": "Element_Rune",
 			"name": "Earth",
 			"collection": "Base",
 			"description": "component of this world, represents earth.",
-			"runePath": "./"
+			"sprite": "Sprites/Elemental_Earth"
 		},
 		{
 			"rclass": "Forme_Rune",
 			"name": "circle",
 			"collection": "Base",
 			"description": "represents cohesion.",
-			"runePath": "./"
+			"sprite": "Sprites/Forme_Yr"
 		},
 		{
 			"rclass": "Cast_Rune",
-			"name": "concentration",
+			"name": "Rho",
 			"collection": "Base",
 			"description": "represents beginner's concentration.",
-			"runePath": "./"
+			"sprite": "Sprites/Cast_Rho"
 		},
 		{
 			"rclass": "Forme_Rune",
 			"name": "RightArrow",
 			"collection": "Base",
 			"description": "represents stretch(extend) rightwards",
-			"runePath": "./"
+			"sprite": "Sprites/Forme_Kye"
 		},
 		{
 			"rclass": "Forme_Rune",
 			"name": "UpArrow",
-			"collection": "Lock",
+			"collection": "UnLock",
 			"description": "represents stretch(extend) upwards",
-			"runePath": "./"
+			"sprite": "Sprites/Forme_Yr"
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Pi",
+			"collection":"Unlock",
+			"description":"pi",
+			"sprite":"Sprites/Cast_Pi"
 		}
 	]	
 }

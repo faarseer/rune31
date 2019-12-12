@@ -25,5 +25,7 @@ public class Rune
 
 	[JsonProperty("description")]
 	public string description {get;set;}
-
+	
+	[JsonProperty("sprite")]
+	public string sprite {get;set;}
 }
