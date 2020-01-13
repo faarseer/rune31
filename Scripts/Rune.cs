@@ -28,4 +28,10 @@ public class Rune
 	
 	[JsonProperty("sprite")]
 	public string sprite {get;set;}
+	
+	[JsonProperty("prsd_sprite")]
+	public string prsd_sprite {get;set;}
+
+	[JsonProperty("buff")]
+	public Dictionary<string,object> buff {get;set;}
 }

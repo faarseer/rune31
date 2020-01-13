@@ -1,0 +1,38 @@
+{
+	"Equipment":
+	{
+		"Starter_Wand":
+		{
+			"eclass":"wand",
+			"name":"starter_wand",
+			"dmg":0.0,
+			"magic_penetration":0.0,
+			"magic_resistance":0.0,
+			"health":0,
+			"power":null,
+			"description":"for starter"
+		},
+		"Starter_Robe":
+		{
+			"eclass":"robe",
+			"name":"starter_robe",
+			"dmg":0.0,
+			"magic_penetration":0.0,
+			"magic_resistance":0.0,
+			"health":0,
+			"power":null,
+			"description":"for starter"
+		},
+		"Fire_wand":
+		{
+			"eclass":"wand",
+			"name":"Fire_wand",
+			"dmg":10.0,
+			"magic_penetration":0.0,
+			"magic_resistance":0.0,
+			"health":0,
+			"power":null,
+			"description":"reward of Fire10Boss Killer"
+		}
+	}
+}

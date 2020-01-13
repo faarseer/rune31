@@ -7,11 +7,14 @@ using Newtonsoft.Json;
 public class GetPool : MonoBehaviour
 {
 	public List<Rune> getpool;
-	public Dictionary<String,List<Rune>> runepool = new Dictionary<String, List<Rune>>();
+	public Dictionary<string,List<Rune>> runepool = new Dictionary<string, List<Rune>>();
 
 	void Start()
 	{
 		startgetpool();
+		Debug.Log("ele:"+runepool["Element_Rune"].Count+"\nforme"+
+		runepool["Forme_Rune"].Count+"\ncast"+runepool["Cast_Rune"].Count);
+		
 	}
 
 	void Addrune(Rune newrune)
@@ -50,6 +53,5 @@ public class GetPool : MonoBehaviour
 				runepool["Forme_Rune"].Add(rune);
 			}
 		}
-		Debug.Log(runepool["Cast_Rune"].Count);
 	}
 }
