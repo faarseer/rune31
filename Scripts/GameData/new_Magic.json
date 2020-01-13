@@ -1,0 +1,719 @@
+{
+	"Magics": 
+	{
+		"Ball":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "FireBall",
+					"collection": "Base",
+					"description": "Ball + fire",
+					"Forme_Rune":"Ball",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "WaterBall",
+					"collection": "Base",
+					"description": "Ball + Water",
+					"Forme_Rune":"Ball",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "EarthBall",
+					"collection": "Base",
+					"description": "Ball + Earth",
+					"Forme_Rune":"Ball",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "LightningBall",
+					"collection": "Base",
+					"description": "Ball + Lightning",
+					"Forme_Rune":"Ball",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+
+		"Pierce":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "FireSpear",
+					"collection": "Base",
+					"description": "pierce + fire",
+					"Forme_Rune":"Pierce",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 50,
+					"duration":0,
+					"channeling":false,
+					"area":2,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "WaterSpear",
+					"collection": "Base",
+					"description": "pierce + Water",
+					"Forme_Rune":"Pierce",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 50,
+					"duration":0,
+					"channeling":false,
+					"area":2,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "EarthSpear",
+					"collection": "Base",
+					"description": "pierce + Earth",
+					"Forme_Rune":"Pierce",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 50,
+					"duration":0,
+					"channeling":false,
+					"area":2,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "LightningSpear",
+					"collection": "Base",
+					"description": "pierce + Lightning",
+					"Forme_Rune":"Pierce",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 50,
+					"duration":0,
+					"channeling":false,
+					"area":2,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+		
+		"Slice":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "FireSword",
+					"collection": "Base",
+					"description": "Sword + Fire",
+					"Forme_Rune":"Slice",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "WaterSword",
+					"collection": "Base",
+					"description": "Sword + Water",
+					"Forme_Rune":"Slice",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "EarthSword",
+					"collection": "Base",
+					"description": "Sword + Earth",
+					"Forme_Rune":"Slice",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "LightningSword",
+					"collection": "Base",
+					"description": "Sword + Lightning",
+					"Forme_Rune":"Slice",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+		
+		"Shoot":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "FireArrow",
+					"collection": "Base",
+					"description": "Shoot + Fire",
+					"Forme_Rune":"Shoot",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},	
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "WaterArrow",
+					"collection": "Base",
+					"description": "Shoot + Water",
+					"Forme_Rune":"Shoot",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "EarthArrow",
+					"collection": "Base",
+					"description": "Shoot + Earth",
+					"Forme_Rune":"Shoot",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "LigtningArrow",
+					"collection": "Base",
+					"description": "Shoot + Lightning",
+					"Forme_Rune":"Shoot",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":true,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+
+		"Lift":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "FireWall",
+					"collection": "Base",
+					"description": "Lift + Fire",
+					"Forme_Rune":"Lift",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":true,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "WaterWall",
+					"collection": "Base",
+					"description": "Lift + Water",
+					"Forme_Rune":"Lift",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":true,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "EarthWall",
+					"collection": "Base",
+					"description": "Lift + Earth",
+					"Forme_Rune":"Lift",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":true,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "LightningWall",
+					"collection": "Base",
+					"description": "Lift + Lightning",
+					"Forme_Rune":"Lift",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 100,
+					"duration":0,
+					"channeling":true,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+
+		"Circle":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "FireBarrier",
+					"collection": "Base",
+					"description": "Circle + Fire",
+					"Forme_Rune":"Circle",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "WaterBarrier",
+					"collection": "Base",
+					"description": "Circle + Water",
+					"Forme_Rune":"Circle",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "EarthBarrier",
+					"collection": "Base",
+					"description": "Circle + Earth",
+					"Forme_Rune":"Circle",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Depend", 
+					"name": "LightningBarrier",
+					"collection": "Base",
+					"description": "Circle + Lightning",
+					"Forme_Rune":"Circle",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":0,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+
+		"Down":
+		{
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "Rain",
+					"collection": "Base",
+					"description": "Down + Water",
+					"Forme_Rune":"Down",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 30,
+					"duration":10,
+					"channeling":false,
+					"area":4,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "Thunder",
+					"collection": "Base",
+					"description": "Down + Lightning",
+					"Forme_Rune":"Down",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 30,
+					"duration":10,
+					"channeling":false,
+					"area":4,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+
+		"Claw":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "FireClaw",
+					"collection": "Base",
+					"description": "Claw + Fire",
+					"Forme_Rune":"Claw",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 150,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+			},
+			"Earth":
+			{
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "LightningClaw",
+					"collection": "Base",
+					"description": "Claw + Lightning",
+					"Forme_Rune":"Claw",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 150,
+					"duration":0,
+					"channeling":false,
+					"area":1,
+					"target":false,
+					"condition":null,
+					"cc":null,
+					"prefab":null
+				}
+			}
+		},
+
+		"Persist":
+		{
+			"Fire":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "Incinerate",
+					"collection": "Base",
+					"description": "Persist + Fire",
+					"Forme_Rune":"Perist",
+					"Element_Rune":"Fire",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":1,
+					"target": true,
+					"condition":"Fire",
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Water":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "Frozen?Wet?",
+					"collection": "Base",
+					"description": "Persist + Water",
+					"Forme_Rune":"Perist",
+					"Element_Rune":"Water",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":1,
+					"target": true,
+					"condition":"Water",
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Earth":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "Poisoned",
+					"collection": "Base",
+					"description": "Persist + Earth",
+					"Forme_Rune":"Perist",
+					"Element_Rune":"Earth",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":1,
+					"target": true,
+					"condition":"Earth",
+					"cc":null,
+					"prefab":null
+				}
+			},
+			"Lightning":
+			{
+				"Rho":
+				{
+					"mclass": "Attack", 
+					"name": "Shocked",
+					"collection": "Base",
+					"description": "Persist + Lightning",
+					"Forme_Rune":"Perist",
+					"Element_Rune":"Lightning",
+					"Cast_Rune": null,
+					"dmg": 10,
+					"duration":10,
+					"channeling":false,
+					"area":1,
+					"target": true,
+					"condition":"Lightning",
+					"cc":null,
+					"prefab":null
+				}
+			}
+		}
+	}
+}
+

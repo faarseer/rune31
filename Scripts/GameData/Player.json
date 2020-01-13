@@ -1,0 +1,23 @@
+{
+	"Player": 
+	{
+		"character": "Rone",
+		"equipment": 
+		{
+			"weapon": "starter_wand",
+			"robe": "starter_robe"
+		},
+		"rune_proficiency":
+		{
+			"Fire":0.0,
+			"Ice":0.0,
+			"Lightning":0.0,
+			"Earth":0.0,
+			"circle":0.0,
+			"Rho":0.0,
+			"RightArrow":0.0,
+			"UpArrow":0.0,
+			"Pi":0.0
+		}
+	}
+}		

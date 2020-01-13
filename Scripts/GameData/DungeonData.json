@@ -1,0 +1,17 @@
+{
+	"Dungeons": 
+	[
+		{
+			"name": "Fire1",
+			"enemy":
+			{
+				"1":"Fire1Monster",
+				"2":null,
+				"3":null,
+				"4":null
+			},
+			"map": "FireDungeon",
+			"sound":null
+		}		
+	]
+}		

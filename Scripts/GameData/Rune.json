@@ -5,63 +5,211 @@
 			"name": "Fire",
 			"collection": "Base",
 			"description": "component of this world, represents fire.",
-			"sprite": "Sprites/Elemental_Fire"
+			"sprite": "Sprites/Elemental_Fire",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
 		},
 		{
 			"rclass": "Element_Rune",
 			"name": "Ice",
 			"collection": "Base",
 			"description": "component of this world, represents ice.",
-			"sprite": "Sprites/Elemental_Water"
+			"sprite": "Sprites/Elemental_Water",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
 		},
 		{
 			"rclass": "Element_Rune",
 			"name": "Lightning",
 			"collection": "Base",
 			"description": "component of this world, represents lightning.",
-			"sprite": "Sprites/Elemental_Lightning"
+			"sprite": "Sprites/Elemental_Lightning",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
 		},
 		{
 			"rclass": "Element_Rune",
 			"name": "Earth",
 			"collection": "Base",
 			"description": "component of this world, represents earth.",
-			"sprite": "Sprites/Elemental_Earth"
+			"sprite": "Sprites/Elemental_Earth",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
 		},
 		{
 			"rclass": "Forme_Rune",
-			"name": "circle",
+			"name": "Circle",
 			"collection": "Base",
-			"description": "represents cohesion.",
-			"sprite": "Sprites/Forme_Yr"
+			"description": "represents Barrier.",
+			"sprite": "Sprites/Forme_Yr",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Shoot",
+			"collection": "Base",
+			"description": "represents Shoot an Arrow",
+			"sprite": "Sprites/Forme_Kye",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Lift",
+			"collection": "Base",
+			"description": "represents Lift a Wall",
+			"sprite": "Sprites/Forme_Ak",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Ball",
+			"collection": "Base",
+			"description": "represents make a Ball",
+			"sprite": "Sprites/Forme_Le",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Slice",
+			"collection": "Base",
+			"description": "represents Slice with a Sword",
+			"sprite": "Sprites/Forme_Sal",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Pierce",
+			"collection":"Base",
+			"description":"represents Pierce with a Spear",
+			"sprite":"Sprites/Forme_Ta",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Claw",
+			"collection":"Unlock",
+			"description":"represents Claws",
+			"sprite":"Sprites/Forme_Ta",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Persist",
+			"collection":"Unlock",
+			"description":"represents Persists the Elements",
+			"sprite":"Sprites/Forme_Ta",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
+		},
+		{
+			"rclass": "Forme_Rune",
+			"name": "Down",
+			"collection":"Unlock",
+			"description":"represents Goes Down the Elements",
+			"sprite":"Sprites/Forme_Ta",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
 		},
 		{
 			"rclass": "Cast_Rune",
 			"name": "Rho",
 			"collection": "Base",
 			"description": "represents beginner's concentration.",
-			"sprite": "Sprites/Cast_Rho"
-		},
-		{
-			"rclass": "Forme_Rune",
-			"name": "RightArrow",
-			"collection": "Base",
-			"description": "represents stretch(extend) rightwards",
-			"sprite": "Sprites/Forme_Kye"
-		},
-		{
-			"rclass": "Forme_Rune",
-			"name": "UpArrow",
-			"collection": "UnLock",
-			"description": "represents stretch(extend) upwards",
-			"sprite": "Sprites/Forme_Yr"
+			"sprite": "Sprites/Cast_Rho",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+			}
 		},
 		{
 			"rclass": "Cast_Rune",
-			"name": "Pi",
+			"name": "Sharpen",
 			"collection":"Unlock",
-			"description":"pi",
-			"sprite":"Sprites/Cast_Pi"
+			"description":"sharpen the magic, penetration++",
+			"sprite":"Sprites/Cast_Pi",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"magic_penetration": 2.0
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Concentrate",
+			"collection":"Unlock",
+			"description":"enhance the magic, dmg++",
+			"sprite":"Sprites/Cast_De",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"dmg": 10.0
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Wide",
+			"collection":"Unlock",
+			"description":"Wide the magic Area, area++",
+			"sprite":"Sprites/Cast_Mo",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"area": 1
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Harden",
+			"collection":"Unlock",
+			"description":"Harden the depend magic, resistance++",
+			"sprite":"Sprites/Cast_She",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"magic_resistance": 2.0
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Fire_cast",
+			"collection":"Unlock",
+			"description":"plus fire element",
+			"sprite":"Sprites/Elemental_Fire",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"element": "Fire"
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Ice_cast",
+			"collection":"Unlock",
+			"description":"plus ice element",
+			"sprite":"Sprites/Elemental_Water",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"element": "Water"
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Lightning_cast",
+			"collection":"Unlock",
+			"description":"plus lightning element",
+			"sprite":"Sprites/Elemental_Lightning",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"element": "Lightning"
+			}
+		},
+		{
+			"rclass": "Cast_Rune",
+			"name": "Earth_cast",
+			"collection":"Unlock",
+			"description":"plus earth element",
+			"sprite":"Sprites/Elemental_Earth",
+			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
+			"buff":
+			{
+				"element": "Earth"
+			}
 		}
 	]	
 }
