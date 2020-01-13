@@ -45,15 +45,15 @@ public class Player : MonoBehaviour
 		_Equipments Equipments_Data =JsonConvert.DeserializeObject<_Equipments>(File.ReadAllText(filepath + "Equipment.json"));
 		_Characters Characters_Data = JsonConvert.DeserializeObject<_Characters>(File.ReadAllText(filepath + "Character.json"));
 		//---//
-		_Character character = Characters_Data.Characters[Player_Data.Player.character]; 
+		_Character character = Characters_Data.Characters[Player_Data.character]; 
 		
-		_Equipment wand = Equipments_Data.Equipments[Player_Data.Player.equipment["weapon"]];
-		_Equipment robe = Equipments_Data.Equipments[Player_Data.Player.equipment["robe"]];
-		rune_proficiency = Player_Data.Player.rune_proficiency;
+		_Equipment wand = Equipments_Data.Equipments[Player_Data.equipment["weapon"]];
+		_Equipment robe = Equipments_Data.Equipments[Player_Data.equipment["robe"]];
+		rune_proficiency = Player_Data.rune_proficiency;
 		
-		magic_penetration += characters.magic_penetration + wand.magic_penetration + robe.magic_penetration;
-		magic_resistance += characters.magic_resistance + wand.magic_resistance + robe.magic_resistance;
-		health += characters.health + wand.health + robe.health;
+		magic_penetration += character.magic_penetration + wand.magic_penetration + robe.magic_penetration;
+		magic_resistance += character.magic_resistance + wand.magic_resistance + robe.magic_resistance;
+		health += character.health + wand.health + robe.health;
 		//equipment character 특성들 다 저장해야됨.
 	}
 

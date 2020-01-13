@@ -14,8 +14,9 @@ public class MagicSpace : MonoBehaviour
 	public Dictionary<string,Rune> magicspace = new Dictionary<string,Rune>();
 	public int chant {get;set;}
 	public _Magic present;
-	GameObject MagicViewer;
-
+	private GameObject MagicViewer;
+	private GameObject Rune_Compo_Viewer;
+	
 	void Start()
 	{
 		filepath = Application.dataPath + "/rune31/Scripts/GameData/" + "new_Magic.json";
@@ -104,10 +105,20 @@ public class MagicSpace : MonoBehaviour
 		}
 	}
 	
+	IEnumerator Rune_Compo_View()
+	{
+		Rune_Compo_Viewer = new GameObject();
+		Rune_Compo_Viewer.transform.parent = this.transform;
+		yield return new WaitForSeconds(1.0f);
+	}
+
 	IEnumerator MagicView()
 	{
 		MagicViewer = new GameObject();
-		MagicViewer.AddComponent<BoxCollider2D);
+		MagicViewer.transform.parent = this.transform;
+
+		MagicViewer.AddComponent<BoxCollider2D>();
+		yield return new WaitForSeconds(1.0f);
 	}
 			//foreach(string forme in avamagic.Keys) // 똑같은 룬 계속 누를때에 대한 코딩 필요없는 이유.
 			//{

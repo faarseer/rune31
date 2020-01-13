@@ -12,7 +12,7 @@
 			"attackRate":5.0,
 			"property":"Fire",
 			"magic":null,
-			"sprite":"Sprites/Zombie_temp",
+			"sprite":"Sprites/Enemy/Fire_Enemy_Temp",
 			"reward":
 			{
 				"Fire_wand":0.01
@@ -29,7 +29,7 @@
 			"attackRate":1.0,
 			"property":"Fire",
 			"magic":"FireBall",
-			"sprite":"Sprites/Zombie_temp",
+			"sprite":"Sprites/Enemy/Fire_Enemy_Temp",
 			"reward":
 			{
 				"Fire_wand":0.5

@@ -35,15 +35,15 @@ public class TouchRune : MonoBehaviour
 	{
 		get
 		{
-			if(rune_num <3)
+			if(rune_num <5)
 			{
 				return "Forme_Rune";
 			}
-			if(rune_num >2 && rune_num < 5)
+			if(rune_num >4 & rune_num < 7)
 			{
 				return "Element_Rune";
 			}
-			if(rune_num > 4)
+			if(rune_num > 6)
 			{
 				return "Cast_Rune";
 			}
