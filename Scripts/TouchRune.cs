@@ -58,10 +58,16 @@ public class TouchRune : MonoBehaviour
 		}
 
 	}// 인터페이스에서 각각 직접 지정해줘야됨.
+	private GameObject Rune_Compo_Viewer;	
+	private GameObject View;
 	
+	//changerune eventhandler
+	//public delegate void OnchangeruneEvent(string runeclass, Rune presentRune);
+	//public static event OnchangeruneEvent Onchangerune;
+
 	[SerializeField]
 	public int rune_num;
-	
+
 	void Start()
 	{
 		gp = GameObject.Find("GetPool").GetComponent<GetPool>();
@@ -72,10 +78,16 @@ public class TouchRune : MonoBehaviour
 	
 	void Update()
 	{
-		runeTouch();
+		bool onmagic = GameObject.Find("MagicSpace").GetComponent<MagicSpace>().onmagic;
+		Debug.Log("onmagic:"+onmagic.ToString());
+		// onmagic 변수를 이벤트로 바꿔야함.
+		if(!onmagic)
+		{
+			StartCoroutine(runeTouch());
+		}
 	}
 
-	void runeTouch()
+	IEnumerator runeTouch()
 	{
 		if (Input.GetMouseButtonDown(0)) //touchCount : 터치 GetMouseButton : 마우스
 		{
@@ -119,6 +131,8 @@ public class TouchRune : MonoBehaviour
 			gDraw = false;
 			if (hit.collider != null)
 			{
+				destroy_Rune_Compo();// 다른 collider object 선택시 사라진다.
+				//근데 밑에 넣으면 아에 안없어짐.
 				if (hit.collider.gameObject == this.gameObject)
 				{
 					if (gDraw == false){
@@ -133,6 +147,8 @@ public class TouchRune : MonoBehaviour
 					//Debug.Log("ob.runeclass:"+ob.GetComponent<TouchRune>().runeclass);
 					//Debug.Log("runelistcount"+ob.GetComponent<TouchRune>().runelist.Count);//이거 세개 풀 다나오는데?
 					Debug.Log("pressed rune : "+ob.GetComponent<TouchRune>()._presentRune.name);
+					//이런거 이벤트
+					//Onchangerune(runeclass,_presentRune);
 					MagicSpace ms = GameObject.Find("MagicSpace").GetComponent<MagicSpace>();
 					if(ms.magicspace.ContainsKey(runeclass))
 					{
@@ -143,12 +159,15 @@ public class TouchRune : MonoBehaviour
 						ms.magicspace.Add(runeclass, _presentRune);
 					}
 					ms.chant += 1;
+					//
 					Debug.Log("chant:"+ms.chant);
 					Debug.Log("which class, rune:"+runeclass+"\t"+_presentRune.name);
 					ob.GetComponent<TouchRune>().getRune();
+					Rune_Compo_View(runeclass);
 				}
 			}
 		}
+		yield return new WaitForSeconds(1.0f);
 	}
 
 	void getRune(bool nohit = false)
@@ -166,5 +185,40 @@ public class TouchRune : MonoBehaviour
 		{
 			GetComponent<SpriteRenderer>().sprite = runeImg;
 		}
+	}
+
+	void Rune_Compo_View(string rclass)
+	{
+		//Rune_Compo_Viewer = new GameObject();
+		//Instantiate(Rune_Compo_Viewer,new Vector3(0,0,0), Quaternion.identity);
+		if(rclass == "Forme_Rune")
+		{
+			Rune_Compo_Viewer = Resources.Load("Prefabs/Rune_Circle/Rune_1piece") as GameObject;
+			View = Instantiate(Rune_Compo_Viewer, new Vector3(-2,0,-4), Quaternion.identity) as GameObject;
+		}
+		if(rclass == "Element_Rune")
+		{
+			Rune_Compo_Viewer = Resources.Load("Prefabs/Rune_Circle/Rune_2pieces") as GameObject;
+			View = Instantiate(Rune_Compo_Viewer, new Vector3(-2,0,-4), Quaternion.identity) as GameObject;
+		}
+		if(rclass == "Cast_Rune")
+		{
+			Rune_Compo_Viewer = Resources.Load("Prefabs/Rune_Circle/Rune_3pieces") as GameObject;
+			View = Instantiate(Rune_Compo_Viewer, new Vector3(-2,0,-4), Quaternion.identity) as GameObject;
+		}
+			
+		//Rune_Compo_Viewer.transform.position = this.transform.position;
+		for(int i =0 ; i< View.transform.childCount; i++)
+		{
+			GameObject child = View.gameObject.transform.GetChild(i).gameObject;
+			Debug.Log(child.transform.position);
+			child.GetComponent<ParticleSystem>().Play(true);
+		}
+	}
+	
+	void destroy_Rune_Compo()
+	{
+		Destroy(Rune_Compo_Viewer);
+		Destroy(View);
 	}
 }

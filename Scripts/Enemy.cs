@@ -13,22 +13,23 @@ public class Enemy : MonoBehaviour
 	
 	[SerializeField]
 	public int areanum; // 직접 설정 1~4
-	public string _name;
-	public float dmg;
-	public float magic_penetration;
-	public float magic_resistance;
-	public int health;
-	public float attackDmg;
-	public float attackRate;
-	public _Magic inherent;
+	public string _name {get;set;}
+	public float dmg {get;set;}
+	public float magic_penetration {get;set;}
+	public float magic_resistance {get;set;}
+	public int health {get;set;}
+	public float attackDmg {get;set;}
+	public float attackRate {get;set;}
+	public _Magic inherent {get;set;}
 	public Dictionary<string,float> reward = new Dictionary<string,float>();
-	public int shield = 10;
-    public Sprite Img;
+	public int shield {get;set;}
+    public Sprite Img {get;set;}
 	
 	void Start()
 	{
 		Debug.Log(areanum);
 		presentEnemy();
+		Debug.Log("Enemy Layer:"+gameObject.layer);
 	}
 
 	void Update()
@@ -38,25 +39,32 @@ public class Enemy : MonoBehaviour
 	//	Spell();
 	}
 
-	void presentEnemy() // 특정 몬스터 불러오기 작업해야됨.
+	void presentEnemy() // 단순하게  고쳐라.
 	{
 		string filepath = Application.dataPath + "/rune31/Scripts/GameData/";
 		_Enemies Enemypool = JsonConvert.DeserializeObject<_Enemies>(File.ReadAllText(filepath + "Enemy.json"));
 		_Dungeons DungeonData = JsonConvert.DeserializeObject<_Dungeons>(File.ReadAllText(filepath + "DungeonData.json"));
-		_Enemy present_enemy = Enemypool.Enemies[DungeonData.Dungeons[0].enemy[areanum.ToString()]];
-		Debug.Log(present_enemy.name);
-		_name = present_enemy.name;
-		dmg = present_enemy.dmg;
-		magic_penetration = present_enemy.magic_penetration;
-		magic_resistance= present_enemy.magic_resistance;
-		health = present_enemy.health;
-		attackDmg = present_enemy.attackDmg;
-		attackRate = present_enemy.attackRate;
-		//inherent = present_enemy.magic; // 받아온 enemy.magic은 스트링이니까 매직json열어서 이름에 맞게 불러와라.
-		reward = present_enemy.reward;
-		Img = Resources.Load(String.Format("{0}",present_enemy.sprite), typeof(Sprite)) as Sprite;
-		GetComponent<SpriteRenderer>().sprite = Img;
-		//여기 그냥 리스트로 합쳐서 대입해라.	
+		if(DungeonData.Dungeons[0].enemy[areanum.ToString()] == null)
+		{
+			Destroy(gameObject);
+		}
+		else
+		{
+			_Enemy present_enemy = Enemypool.Enemies[DungeonData.Dungeons[0].enemy[areanum.ToString()]];
+			Debug.Log(present_enemy.name);
+			_name = present_enemy.name;
+			dmg = present_enemy.dmg;
+			magic_penetration = present_enemy.magic_penetration;
+			magic_resistance= present_enemy.magic_resistance;
+			health = present_enemy.health;
+			attackDmg = present_enemy.attackDmg;
+			attackRate = present_enemy.attackRate;
+			//inherent = present_enemy.magic; // 받아온 enemy.magic은 스트링이니까 매직json열어서 이름에 맞게 불러와라.
+			reward = present_enemy.reward;
+			Img = Resources.Load(String.Format("{0}",present_enemy.sprite), typeof(Sprite)) as Sprite;
+			GetComponent<SpriteRenderer>().sprite = Img;
+			//여기 그냥 리스트로 합쳐서 대입해라.
+		}
 	}
 
 	IEnumerator normalAttack()

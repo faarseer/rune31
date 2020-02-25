@@ -113,6 +113,7 @@
 			"prsd_sprite": "Sprites/Forme_Yr_Prsd",
 			"buff":
 			{
+				"dmg": 0.0
 			}
 		},
 		{

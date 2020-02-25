@@ -14,13 +14,49 @@ public class Player : MonoBehaviour
 	Dictionary<string, float> rune_proficiency = new Dictionary<string,float>();
 
 	[SerializeField]
-	public float magic_penetration = 10.0f;
-	public float magic_resistance = 10.0f;
-	public float rune_superiority = 1.3f;
-	public int health = 100;
-	public _Magic present;
-	public int sheild = 10;
-
+	public float magic_penetration
+	{
+		get
+		{
+			return 0.0f;
+		}
+		set{}
+	}
+	public float magic_resistance
+	{
+		get
+		{
+			return 0.0f;
+		}
+		set{}
+	}
+	public float rune_superiority
+	{
+		get
+		{
+			return 1.3f;
+		}
+		set{}
+	}
+	public int health
+	{
+		get
+		{
+			return 0;
+		}
+		set{}
+	}
+	public _Magic present{get;set;}
+	public int sheild
+	{
+		get
+		{
+			return 0;
+		}
+		set{}
+	}
+	public string[] property{get;set;}
+	
 	void Awake()
 	{
 		presentPlayer();
@@ -33,6 +69,8 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		StartCoroutine(IfDead());
+		//Debug.Log(Collision.gameObject.name);
+		//if(Collision.gameobject)
 		StartCoroutine(Spell());
 	}
 
@@ -60,18 +98,18 @@ public class Player : MonoBehaviour
 	IEnumerator Spell()
 	{
 		MagicSpace ms = GameObject.Find("MagicSpace").GetComponent<MagicSpace>();
-		int en_health = GameObject.Find("Enemy").GetComponent<Enemy>().health;
+		int en_health = GameObject.Find("Enemy1").GetComponent<Enemy>().health;
 		if((ms.chant % 3 ==0) & (ms.chant !=0))
 		{
 			present = ms.present;
-			GameObject.Find("Enemy").GetComponent<Enemy>().health = en_health - SpellDamage();
+			GameObject.Find("Enemy1").GetComponent<Enemy>().health = en_health - SpellDamage();
 		}
 		yield return new WaitForSeconds(1.0f);
 	}
 
 	int SpellDamage()
 	{
-		Enemy en = GameObject.Find("Enemy").GetComponent<Enemy>();
+		Enemy en = GameObject.Find("Enemy1").GetComponent<Enemy>();
 		return (int) ((present.dmg - en.shield)*(1+(en.magic_resistance-magic_penetration)/100));
 	}
 	
@@ -79,6 +117,7 @@ public class Player : MonoBehaviour
 	{
 		if(health == 0)
 		{
+			//Dead_Sign
 			//SceneManagement.SceneManager.LoadScene("InGame_Lose");
 		}
 		yield return new WaitForSeconds(0.1f);

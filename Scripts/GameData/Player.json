@@ -2,8 +2,8 @@
 	"character": "Rone",
 	"equipment": 
 	{
-		"weapon": "starter_wand",
-		"robe": "starter_robe"
+		"weapon": "Starter_Wand",
+		"robe": "Starter_Robe"
 	},
 	"rune_proficiency":
 	{

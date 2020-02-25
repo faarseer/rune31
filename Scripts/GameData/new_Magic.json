@@ -21,7 +21,7 @@
 					"target":true,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Fireball"
 				}
 			},
 			"Water":
@@ -42,7 +42,7 @@
 					"target":true,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Fireball"
 				}
 			},
 			"Earth":
@@ -63,7 +63,7 @@
 					"target":true,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Fireball"
 				}
 			},
 			"Lightning":
@@ -84,7 +84,7 @@
 					"target":true,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Fireball"
 				}
 			}
 		},
@@ -109,7 +109,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Icespear"
 				}
 			},
 			"Water":
@@ -130,7 +130,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Icespear"
 				}
 			},
 			"Earth":
@@ -151,7 +151,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Icespear"
 				}
 			},
 			"Lightning":
@@ -172,7 +172,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/Icespear"
 				}
 			}
 		},
@@ -197,7 +197,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/sword"
 				}
 			},
 			"Water":
@@ -218,7 +218,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/sword"
 				}
 			},
 			"Earth":
@@ -239,7 +239,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/sword"
 				}
 			},
 			"Lightning":
@@ -260,7 +260,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/sword"
 				}
 			}
 		},
@@ -373,7 +373,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/makingwall"
 				}
 			},
 			"Water":
@@ -394,7 +394,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/makingwall"
 				}
 			},
 			"Earth":
@@ -415,7 +415,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/makingwall"
 				}
 			},
 			"Lightning":
@@ -436,7 +436,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/makingwall"
 				}
 			}
 		},
@@ -549,7 +549,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/firerain"
 				}
 			},
 			"Lightning":
@@ -570,7 +570,7 @@
 					"target":false,
 					"condition":null,
 					"cc":null,
-					"prefab":null
+					"prefab":"Prefabs/thunder"
 				}
 			}
 		},
@@ -597,12 +597,6 @@
 					"cc":null,
 					"prefab":null
 				}
-			},
-			"Water":
-			{
-			},
-			"Earth":
-			{
 			},
 			"Lightning":
 			{
