@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Resources/Prefabs.meta
 guid: 620ed4976bfdad5409303ef70627cbe8
+========
+guid: f0aad8844b9c50931a069dc536f99f25
+>>>>>>>> 403f674c92283e0d2f1303ca058c4bfa67b1606c:Resources/Sprites/Weapon.meta
+=======
+guid: 18dc14b7951c1675396b11b8cd57f245
+>>>>>>> 403f674c92283e0d2f1303ca058c4bfa67b1606c
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

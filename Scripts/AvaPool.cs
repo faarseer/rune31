@@ -6,18 +6,36 @@ using Newtonsoft.Json;
 
 public class AvaPool : MonoBehaviour
 {
-	public List<Rune> avapool;
-	void Start()
+	TotalPool totalPool;	
+	
+	public static AvaPool instance;
+
+	public List<Rune> avaPool;
+
+	void Awake()
 	{
-		var tp = GameObject.Find("TotalPool").GetComponent<TotalPool>();
-		foreach(Rune rune in tp.totalpool.Runes)
+		if(instance != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		instance = this;
+		
+		totalPool = TotalPool.instance;
+
+		foreach(Rune rune in totalPool.totalPool)
 		{
 			if(rune.collection == "Base" || rune.collection ==  "Unlock")
 			{
-				avapool.Add(rune);
+				avaPool.Add(rune);
 			}
 		}
 		//Debug.Log(avapool.Runes[0].name);
 		//Debug.Log(avapool.Runes.Count);
+	}
+
+	void OnChangeAvaPool(List<Rune> pool)
+	{
+		//reward에 의한 lock -> unlock
 	}
 }

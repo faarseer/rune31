@@ -4,15 +4,15 @@
 		"Fire1Monster":
 		{
 			"name": "Fire1Monster",
-			"dmg":0.0,
+			"dmg":0,
 			"magic_penetration":0.0,
 			"magic_resistance":0.0,
 			"health":50,
-			"attackDmg":2.0,
+			"attackDmg":2,
 			"attackRate":5.0,
 			"property":"Fire",
 			"magic":null,
-			"sprite":"Sprites/Zombie_temp",
+			"sprite":"Sprites/Enemy/Fire_Enemy_Temp",
 			"reward":
 			{
 				"Fire_wand":0.01
@@ -21,15 +21,15 @@
 		"Fire10Boss":
 		{
 			"name": "Fire10Boss",
-			"dmg":10.0,
+			"dmg":10,
 			"magic_penetration":1.0,
 			"magic_resistance":1.0,
 			"health":500,
-			"attackDmg":10.0,
+			"attackDmg":10,
 			"attackRate":1.0,
 			"property":"Fire",
 			"magic":"FireBall",
-			"sprite":"Sprites/Zombie_temp",
+			"sprite":"Sprites/Enemy/Fire_Enemy_Temp",
 			"reward":
 			{
 				"Fire_wand":0.5

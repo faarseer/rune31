@@ -6,81 +6,161 @@ using UnityEngine.UI;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
+using System.Linq;
 
 public class Player : MonoBehaviour
 {
-	//마법관통력, 마법저항력, 룬상성+값, 체력, 장비뭘끼는지, 
-	
-	Dictionary<string, float> rune_proficiency = new Dictionary<string,float>();
+	public static Player instance;
+
+	EqpAvaPool eqpAvaPool;
+	ChrAvaPool chrAvaPool;
+
+	private int _dmg;
+	private float _mdDmg;
+	private float _magicPenetration;
+	private float _magicResistance;
+	private EleSup _ele;
+	private float _eleSup;
+	private int _health;
+	private int _sheild;
+	private _Magic _presentMagic;
+	private _Character _presentChr;
+
+	Dictionary<string, float> runeProficiency = new Dictionary<string,float>();
+	Dictionary<string, _Equipment> presentEqp = new Dictionary<string, _Equipment>();
 
 	[SerializeField]
-	public float magic_penetration = 10.0f;
-	public float magic_resistance = 10.0f;
-	public float rune_superiority = 1.3f;
-	public int health = 100;
-	public _Magic present;
-	public int sheild = 10;
-
+	public int dmg{
+		get { return _dmg; }
+		set { _dmg = value; }
+	}
+	public float mdDmg{
+		get { return _mdDmg; }
+		set { _mdDmg = value; }
+	}
+	public float magicPenetration {
+		get	{ return _magicPenetration; }
+		set { _magicPenetration = value; }
+	}
+	public float magicResistance {
+		get	{ return _magicResistance; }
+		set { _magicResistance = value;}
+	}
+	public EleSup ele{
+		get { return _ele; }
+		set { _ele = value; }
+	}
+	public float eleSup{
+		get { return _eleSup; }
+		set { _eleSup = value; }
+	}
+	public int health {
+		get { return _health; }
+		set {
+			_health = value;
+			if(health == 0) OnPlayerDead ();
+		}
+	}
+	public int sheild {
+		get { return _sheild; }
+		set { _sheild = value; }
+	}
+	public _Magic presentMagic {
+		get { return _presentMagic; }
+		set { _presentMagic = value; }
+	}
+	
 	void Awake()
 	{
-		presentPlayer();
+		if(instance != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		instance = this;
+
+		eqpAvaPool = EqpAvaPool.instance;
+		chrAvaPool = ChrAvaPool.instance;
+		PresentPlayer();
 	}
 
-	void Start()
-	{
-	}
+	public delegate void OnPlayerDeadEvent();
+	public event OnPlayerDeadEvent OnPlayerDead;
 
 	void Update()
 	{
-		StartCoroutine(IfDead());
-		StartCoroutine(Spell());
+	}
+	
+	void PlayerDead()
+	{
+		//Dead_Sign
+		//SceneManagement.SceneManager.LoadScene("InGame_Lose");
 	}
 
-	void presentPlayer()
+	void PresentPlayer()
 	{
 		//플레이어가 자신의 캐릭터를 설정하면, 그게 json에 저장되고 불러옴.
 		//GameData/Player,GameData/Character, GameData/Equipment
 		string filepath = Application.dataPath + "/rune31/Scripts/GameData/";
-		_Player Player_Data = JsonConvert.DeserializeObject<_Player>(File.ReadAllText(filepath + "Player.json"));
-		_Equipments Equipments_Data =JsonConvert.DeserializeObject<_Equipments>(File.ReadAllText(filepath + "Equipment.json"));
-		_Characters Characters_Data = JsonConvert.DeserializeObject<_Characters>(File.ReadAllText(filepath + "Character.json"));
-		//---//
-		_Character character = Characters_Data.Characters[Player_Data.Player.character]; 
+		_Player player = JsonConvert.DeserializeObject<_Player>(File.ReadAllText(filepath + "Player.json"));
+		//_Equipments Equipments_Data =JsonConvert.DeserializeObject<_Equipments>(File.ReadAllText(filepath + "Equipment.json"));
+		//_Characters Characters_Data = JsonConvert.DeserializeObject<_Characters>(File.ReadAllText(filepath + "Character.json"));
+		//_Character character = Characters_Data.Characters[Player_Data.character]; 
 		
-		_Equipment wand = Equipments_Data.Equipments[Player_Data.Player.equipment["weapon"]];
-		_Equipment robe = Equipments_Data.Equipments[Player_Data.Player.equipment["robe"]];
-		rune_proficiency = Player_Data.Player.rune_proficiency;
-		
-		magic_penetration += characters.magic_penetration + wand.magic_penetration + robe.magic_penetration;
-		magic_resistance += characters.magic_resistance + wand.magic_resistance + robe.magic_resistance;
-		health += characters.health + wand.health + robe.health;
-		//equipment character 특성들 다 저장해야됨.
-	}
+		_presentChr = chrAvaPool.avaPool[player.character];
 
-	IEnumerator Spell()
-	{
-		MagicSpace ms = GameObject.Find("MagicSpace").GetComponent<MagicSpace>();
-		int en_health = GameObject.Find("Enemy").GetComponent<Enemy>().health;
-		if((ms.chant % 3 ==0) & (ms.chant !=0))
+		foreach(string eqp in player.equipment.Keys)
 		{
-			present = ms.present;
-			GameObject.Find("Enemy").GetComponent<Enemy>().health = en_health - SpellDamage();
+			foreach(_Equipment e in eqpAvaPool.avaPool)
+			{
+				if(e.name == player.equipment[eqp])
+				{
+					presentEqp.Add(eqp, e);
+				}
+			}
 		}
-		yield return new WaitForSeconds(1.0f);
-	}
 
-	int SpellDamage()
-	{
-		Enemy en = GameObject.Find("Enemy").GetComponent<Enemy>();
-		return (int) ((present.dmg - en.shield)*(1+(en.magic_resistance-magic_penetration)/100));
+		runeProficiency = player.runeProficiency;
+		_magicPenetration = _presentChr.magicPenetration;
+		_magicResistance = _presentChr.magicResistance;
+		_health = _presentChr.health;
+		
+		//이런 것들은 똑같은 작업이라 하나로 고쳐서..
+		//System.Reflection 써야할듯
+
+		var mpQuery = 
+			(from eqp in presentEqp
+			select eqp.Value.magicPenetration);
+
+		var mrQuery = 
+			(from eqp in presentEqp
+			select eqp.Value.magicResistance);
+		
+		var hQuery = 
+			(from eqp in presentEqp
+			select eqp.Value.health);
+		
+		var mdDmgQuery = 
+			(from eqp in presentEqp
+			select eqp.Value.mdDmg);
+
+		foreach(var q in mpQuery)
+		{
+			_magicPenetration += (float)q;
+		}
+		foreach(var q in mrQuery)
+		{
+			_magicResistance += (float)q;
+		}
+		foreach(var q in hQuery)
+		{
+			_health += (int)q;
+		}
+		foreach(var q in mdDmgQuery)
+		{
+			_mdDmg += (float)q;
+		}
+		_dmg = (int)((float)_dmg*(1.0+_mdDmg));
 	}
 	
-	IEnumerator IfDead()
-	{
-		if(health == 0)
-		{
-			//SceneManagement.SceneManager.LoadScene("InGame_Lose");
-		}
-		yield return new WaitForSeconds(0.1f);
-	}
 }
