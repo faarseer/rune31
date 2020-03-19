@@ -1,11 +1,13 @@
 {
+	"playerName":"JuneSeok",
 	"character": "Rone",
 	"equipment": 
 	{
 		"weapon": "Starter_Wand",
-		"robe": "Starter_Robe"
+		"robe": "Starter_Robe",
+		"hat": null
 	},
-	"rune_proficiency":
+	"runeProficiency":
 	{
 		"Fire":0.0,
 		"Ice":0.0,

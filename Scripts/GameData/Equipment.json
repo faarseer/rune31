@@ -1,38 +1,140 @@
 {
-	"Equipments":
-	{
-		"Starter_Wand":
+	"Equipment":
+	[
 		{
-			"eclass":"wand",
-			"name":"starter_wand",
-			"dmg":0.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
+			"name":"초심자의완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
 			"health":0,
-			"power":null,
-			"description":"for starter"
+			"Rune":null,
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":"초심자를 위해",
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
 		},
-		"Starter_Robe":
 		{
-			"eclass":"robe",
-			"name":"starter_robe",
-			"dmg":0.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
+			"name":"모험가의 완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
 			"health":0,
-			"power":null,
-			"description":"for starter"
+			"Rune":null,
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":null,
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
 		},
-		"Fire_wand":
 		{
-			"eclass":"wand",
-			"name":"Fire_wand",
-			"dmg":10.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
+			"name":"초보마법사의 완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
 			"health":0,
-			"power":null,
-			"description":"reward of Fire10Boss Killer"
+			"Rune":null,
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":null,
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
+		},
+		{
+			"name":"숙련된마법사의 완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"health":0,
+			"Rune":null,
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":null,
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
+		},
+		{
+			"name":"집중의 완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"health":0,
+			"Rune":{
+				"Ball":0.5
+			},
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":null,
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
+		},
+		{
+			"name":"화살의 완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"health":0,
+			"Rune":{
+				"Arrow": 0.5
+			},
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":null,
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
+		},
+		{
+			"name":"검의 완드",
+			"mdDmg": 0.05,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"health":0,
+			"rune":{
+				"Sword": 0.5
+			},
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":"",
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"weapon",
+			"set":null
+		},
+		{
+			"name":"초심자의 로브",
+			"mdDmg": 0.0,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"health":20,
+			"rune":{
+			},
+			"magicAttribute":{},
+			"eleSuperiority":0.0,
+			"description":"",
+			"img":null,
+			"collection":"Unlock",
+			"tier":1,
+			"sort":"Robe",
+			"set":null
 		}
-	}
+	]
 }

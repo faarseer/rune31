@@ -9,15 +9,10 @@ using UnityEngine.UI;
 public class TouchRune : MonoBehaviour
 {
 	private Rune _presentRune; 
-	public Rune presentRune
-	{
-		get
-		{
-			return _presentRune;
-		}
-		set
-		{
-			_presentRune = value;
+	public Rune presentRune{
+		get { return _presentRune; }
+		set { 
+			_presentRune = value; 
 		}
 	}
 	private GetPool gp;
@@ -57,16 +52,18 @@ public class TouchRune : MonoBehaviour
 			runeclass = value;
 		}
 
-	}// 인터페이스에서 각각 직접 지정해줘야됨.
+	}
+	
 	private GameObject Rune_Compo_Viewer;	
 	private GameObject View;
-	
-	//changerune eventhandler
-	//public delegate void OnchangeruneEvent(string runeclass, Rune presentRune);
-	//public static event OnchangeruneEvent Onchangerune;
 
 	[SerializeField]
 	public int rune_num;
+	
+	void Awake()
+	{
+		GetPool.OnChangeRune += OnChangeRune;
+	}
 
 	void Start()
 	{
@@ -91,37 +88,7 @@ public class TouchRune : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0)) //touchCount : 터치 GetMouseButton : 마우스
 		{
-			//Touch touch = Input.GetTouch(0); // 첫번째 인풋 터치 변수
-			
-			//switch(touch.phase)
-			//{
-			//	case TouchPhase.Began :
-			//		Console.Write("touch");
-			//		touchPos = touch.position;
-			//		break;
-			//	case TouchPhase.Moved :
-			//		break;
-			//	case TouchPhase.Ended :
-			//		if ((Mathf.Abs(touch.position.x) < Mathf.Abs(touchPos.x) + 3.0) &&
-			//			(Mathf.Abs(touch.position.y) < Mathf.Abs(touchPos.y) + 3.0))
-			//		{
-			//			break;
-			//		}
-			//		else
-			//		{
-			//			Console.Write("magicspace_coroutine");
-			//			//magicspace(); // 현재 위치의 룬의 정보를 magicspace 로 옮김.
-			//			getRune();
-			//			break;
-			//	}
-			//}
 			firstpoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			//runeImg = Resources.Load(String.Format("{0}",presentRune.prsd_sprite), typeof(Sprite)) as Sprite;
-			//istouch = true;
-			//if(istouch)
-			//{
-				//hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite = runeImg;
-			//}
 		}
 		
 		if(Input.GetMouseButtonUp(0))

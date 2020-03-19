@@ -6,52 +6,81 @@ using Newtonsoft.Json;
 
 public class GetPool : MonoBehaviour
 {
-	public List<Rune> getpool;
-	public Dictionary<string,List<Rune>> runepool = new Dictionary<string, List<Rune>>();
+	AvaPool avaPool;
+
+	#region Singleton
+	public static GetPool instance;
+	private void Awake()
+	{
+		//DontDestroyOnLoad(gameObject);
+		if(instance != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		instance = this;
+
+		avaPool = AvaPool.instance;
+	}
+	#endregion
+
+	public List<Rune> getPool;
+	public Dictionary<string,List<Rune>> runePool = new Dictionary<string, List<Rune>>();
+	
+	public delegate void OnChangeRuneHandEvent(GameObject g);
+	public static event OnChangeRuneHandEvent OnChangeRuneHand;
+	
+	private Vector3 firstPoint;
 
 	void Start()
 	{
 		startgetpool();
-		Debug.Log("ele:"+runepool["Element_Rune"].Count+"\nforme"+
-		runepool["Forme_Rune"].Count+"\ncast"+runepool["Cast_Rune"].Count);
-		
+		Debug.Log("ele:"+runePool["Element_Rune"].Count+"\nforme"+
+		runePool["Forme_Rune"].Count+"\ncast"+runePool["Cast_Rune"].Count);
 	}
-
-	void Addrune(Rune newrune)
+	
+	void Update()
 	{
-		getpool.Add(newrune); //한개 추가
-	}
-
-	void Poprune(Rune removerune)
-	{
-		getpool.Remove(removerune); //한개 삭제
+		if(Input.GetMouseButtonDown(0))
+		{
+			firstPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		}
+		if(Input.GetMouseButtonUp(0))
+		{
+			RaycastHit2D hit = Physics2D.Raycast(firstPoint, Vector3.zero);
+			if (hit.collider.tag == "RuneHand")
+			{
+				OnChangeRuneHand(hit.transform.gameObject);
+			}
+		}
 	}
 	
 	void startgetpool()
 	{
 		// startrune 정하는 시스템 및 스프라이트 만들어야됨.
-		AvaPool ap = GameObject.Find("AvaPool").GetComponent<AvaPool>();
-		getpool = ap.avapool;
-		List<Rune> elist = new List<Rune>();
-		List<Rune> flist = new List<Rune>();
-		List<Rune> clist = new List<Rune>();
-		runepool.Add("Element_Rune", elist);
-		runepool.Add("Forme_Rune", flist);
-		runepool.Add("Cast_Rune", clist);
-		foreach(Rune rune in getpool)
+		getPool = avaPool.avaPool;
+		runePool.Add("Element_Rune", new List<Rune>());
+		runePool.Add("Forme_Rune", new List<Rune>());
+		runePool.Add("Cast_Rune", new List<Rune>());
+		foreach(Rune rune in getPool)
 		{
 			if(rune.rclass == "Element_Rune")
 			{
-				runepool["Element_Rune"].Add(rune);
+				runePool["Element_Rune"].Add(rune);
 			}
 			if(rune.rclass == "Cast_Rune")
 			{
-				runepool["Cast_Rune"].Add(rune);
+				runePool["Cast_Rune"].Add(rune);
 			}
 			if(rune.rclass == "Forme_Rune")
 			{
-				runepool["Forme_Rune"].Add(rune);
+				runePool["Forme_Rune"].Add(rune);
 			}
 		}
+	}
+
+	void OnChangeGetPool(List<Rune> pool)
+	{
+		//reward 에 의한 lock -> unlock
 	}
 }

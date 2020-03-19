@@ -85,7 +85,7 @@
 			"name": "Claw",
 			"collection":"Unlock",
 			"description":"represents Claws",
-			"sprite":"Sprites/Rune/Forme_Ta",
+			"sprite":"Sprites/Rune/Forme_Siv",
 			"prsd_sprite": "Sprites/Forme_Yr_Prsd"
 		},
 		{

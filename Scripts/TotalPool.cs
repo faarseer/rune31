@@ -8,16 +8,31 @@ using Newtonsoft.Json;
 
 public class TotalPool : MonoBehaviour
 {
-	private string filepath;
-	private string jsons;
-	public _Runes totalpool;
+	public static TotalPool instance;
 
-	void Awake()
+	public List<Rune> totalPool;
+
+	private void Awake()
 	{
-		filepath = Application.dataPath + "/rune31/Scripts/GameData/" + "Rune.json";
-		jsons = File.ReadAllText(filepath);
-		totalpool = JsonConvert.DeserializeObject<_Runes>(jsons);
+		DontDestroyOnLoad(gameObject);
+		string filepath = Application.dataPath + "/rune31/Scripts/GameData/" + "Rune.json";
+		string jsons = File.ReadAllText(filepath);
+		var _totalPool = JsonConvert.DeserializeObject<_Runes>(jsons);
+		totalPool = _totalPool.Runes;
+		
+		if(instance != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		instance = this;
+		
 		//Debug.Log(totalpool.Runes[0].name);
 		//Debug.Log(totalpool.Runes.Count);
+	}
+	
+	void OnChangeTotalPool(List<Rune> pool)
+	{
+		// reward에 의한 lock -> unlock
 	}
 }

@@ -16,7 +16,7 @@ public class _Enemy
 	public string name {get;set;}
 	
 	[JsonProperty("dmg")]
-	public float dmg {get;set;}
+	public int dmg {get;set;}
 	
 	[JsonProperty("magic_penetration")]
 	public float magic_penetration {get;set;}
@@ -28,7 +28,7 @@ public class _Enemy
 	public int health {get;set;}
 	
 	[JsonProperty("attackDmg")]
-	public float attackDmg {get;set;}
+	public int attackDmg {get;set;}
 	
 	[JsonProperty("attackRate")]
 	public float attackRate {get;set;}

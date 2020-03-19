@@ -1,59 +1,65 @@
 {
-	"Characters":
+	"Character":
 	{
 		"Rone":
 		{
 			"name":"Rone",
-			"dmg":0.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
-			"rune_superiority":0.0,
-			"health":100
+			"dmg":0,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"runeSuperiority":0.0,
+			"health":100,
+			"collection":"Base"
 		},
 		"Penetra":
 		{
 			"name":"Penetra",
-			"dmg":0.0,
-			"magic_penetration":10.0,
-			"magic_resistance":0.0,
-			"rune_superiority":0.0,
-			"health": 100
+			"dmg":0,
+			"magicPenetration":10.0,
+			"magicResistance":0.0,
+			"runeSuperiority":0.0,
+			"health": 100,
+			"collection":"Base"
 		},
 		"Rezi":
 		{
 			"name":"Rezi",
-			"dmg":0.0,
-			"magic_penetration":0.0,
-			"magic_resistance":10.0,
-			"rune_superiority":0.0,
-			"health": 100
+			"dmg":0,
+			"magicPenetration":0.0,
+			"magicResistance":10.0,
+			"runeSuperiority":0.0,
+			"health": 100,
+			"collection":"UnLock"
 		},
 		"RuneMaster":
 		{
 			"name":"RuneMaster",
-			"dmg":0.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
-			"rune_superiority":0.3,
-			"health":100
+			"dmg":0,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"runeSuperiority":0.3,
+			"health":100,
+			"collection":"Lock"
 		},
 		"Pig":
 		{
 			"name":"Pig",
-			"dmg":0.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
-			"rune_superiority":0.0,
-			"health":300
+			"dmg":0,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"runeSuperiority":0.0,
+			"health":300,
+			"collection":"Lock"
 		},
 		"Archmage":
 		{
 			"name":"Archmage",
-			"dmg":30.0,
-			"magic_penetration":0.0,
-			"magic_resistance":0.0,
-			"rune_superiority":0.0,
-			"health":150
+			"dmg":30,
+			"magicPenetration":0.0,
+			"magicResistance":0.0,
+			"runeSuperiority":0.0,
+			"health":150,
+			"collection":"Lock"
 		}
 	}
 }

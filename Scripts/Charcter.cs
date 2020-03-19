@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class _Characters
 {
-	public Dictionary<string,_Character> Characters;
+	public Dictionary<string,_Character> Character;
 }
 
 [Serializable]
@@ -15,17 +15,20 @@ public class _Character
 	public string name {get;set;}
 
 	[JsonProperty("dmg")]
-	public float dmg {get;set;}
+	public int dmg {get;set;}
 	
-	[JsonProperty("magic_penetration")]
-	public float magic_penetration {get;set;}
+	[JsonProperty("magicPenetration")]
+	public float magicPenetration {get;set;}
 
-	[JsonProperty("magic_resistance")]
-	public float magic_resistance {get;set;}
+	[JsonProperty("magicResistance")]
+	public float magicResistance {get;set;}
 	
-	[JsonProperty("rune_superiority")]
-	public float rune_superiority {get;set;}
+	[JsonProperty("runeSuperiority")]
+	public float runeSuperiority {get;set;}
 	
 	[JsonProperty("health")]
 	public int health {get;set;}
+	
+	[JsonProperty("collection")]
+	public string collection {get;set;}
 }
