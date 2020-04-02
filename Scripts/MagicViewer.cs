@@ -22,7 +22,7 @@ public class MagicViewer : MonoBehaviour
 	public delegate void OnDestroyRuneCompoViewEvent();
 	public OnDestroyRuneCompoViewEvent OnDestroyRuneCompoView;
 	
-	public delegate void OnHitEvent(_Magic magic, GameObject g);
+	public delegate void OnHitEvent(_Magic magic, GameObject who, GameObject whom);
 	public OnHitEvent OnHit;
 	
 	public GameObject prObject;
@@ -82,12 +82,12 @@ public class MagicViewer : MonoBehaviour
 	IEnumerator hitting(GameObject g, LayerMask layer)
 	{
 		if(layer == plyMask)
-		{
+		{	
 			RaycastHit2D ray = Physics2D.Raycast(g.transform.position,g.transform.right, layer);
 			if(ray.collider.tag == "Enemy")
 			{
 				Debug.Log("Enemy hit:" + ray.collider.gameObject.name);
-				OnHit(_presentMagic, g);
+				OnHit(_presentMagic, prObject, g);
 				DestroyMagic(g);
 			}
 			else
@@ -102,6 +102,7 @@ public class MagicViewer : MonoBehaviour
 			if(ray.collider.tag == "Player")
 			{
 				Debug.Log("Player hit");
+				OnHit(_presentMagic, prObject, g);
 				//onPlayerHit(_presentMagic, g);
 				DestroyMagic(g);
 			}

@@ -29,6 +29,11 @@ public class ChrTotalPool : MonoBehaviour
 		totalPool = JsonConvert.DeserializeObject<_Characters>(jsons).Character;
 	}
 	
+	void Start()
+	{
+		Debug.Log("ChrTotalPool :"+totalPool.Keys.Count);
+	}
+
 	void OnChangeTotalPool(List<_Character> pool)
 	{
 		// reward에 의한 lock -> unlock

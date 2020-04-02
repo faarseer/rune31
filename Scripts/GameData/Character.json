@@ -9,7 +9,8 @@
 			"magicResistance":0.0,
 			"runeSuperiority":0.0,
 			"health":100,
-			"collection":"Base"
+			"collection":"Base",
+			"prefab":""
 		},
 		"Penetra":
 		{
@@ -19,7 +20,8 @@
 			"magicResistance":0.0,
 			"runeSuperiority":0.0,
 			"health": 100,
-			"collection":"Base"
+			"collection":"Base",
+			"prefab":""
 		},
 		"Rezi":
 		{
@@ -29,7 +31,8 @@
 			"magicResistance":10.0,
 			"runeSuperiority":0.0,
 			"health": 100,
-			"collection":"UnLock"
+			"collection":"UnLock",
+			"prefab":""
 		},
 		"RuneMaster":
 		{
@@ -39,7 +42,8 @@
 			"magicResistance":0.0,
 			"runeSuperiority":0.3,
 			"health":100,
-			"collection":"Lock"
+			"collection":"Lock",
+			"prefab":""
 		},
 		"Pig":
 		{
@@ -49,7 +53,8 @@
 			"magicResistance":0.0,
 			"runeSuperiority":0.0,
 			"health":300,
-			"collection":"Lock"
+			"collection":"Lock",
+			"prefab":""
 		},
 		"Archmage":
 		{
@@ -59,7 +64,8 @@
 			"magicResistance":0.0,
 			"runeSuperiority":0.0,
 			"health":150,
-			"collection":"Lock"
+			"collection":"Lock",
+			"prefab":""
 		}
 	}
 }

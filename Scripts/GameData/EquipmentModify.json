@@ -2,14 +2,32 @@
 	"EquipmentModify":
 	{
 		"Low":
-		{
-		
-		},
+		[
+			"Ignorant", "Deranged", "Rone`s", "Inept", "Spiked",
+			"Awkward", "Awful", "Lethargic", "Terrible", "Unhappy",
+			"Shameful", "Damaged", "Shoddy", "Broken", "Weak",
+			"Slow", "Sluggish", "Annoying", "Unpleasant", "Lazy",
+			"Dull"
+		],
 		"Medium":
-		{
-		},
+		[
+			"Forceful", "Strong", "Ruthless", "Keen", "Hurtful",
+			"Zealous", "Agile", "Quick", "Nasty", "Nimble",
+			"Massive", "Pointy", "Large", "Dangerous", "Heavy",
+			"Light", "Small", "Rapid", "Hasty", "Staunch", 
+			"Intimidating", "Sighted", "Frenzying", "Powerful",
+			"Adept", "Taboo", "Maniacal", "Furious", "Intense",
+			"Hard", "Arcane"
+		],
 		"High":
-		{
-		}
+		[
+			"Godly", "Superior", "Deadly", "Murderous", "Legendary",
+			"Savage", "Unreal", "Mythical", "Masterful", "Masterful",
+			"Mystic", "Celestial"
+		],
+		"Element":
+		[
+			"ofFire", "ofIce", "ofLightning", "ofEarth"
+		]
 	}
 }

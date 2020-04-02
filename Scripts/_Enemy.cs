@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 //Serialization of Attributes
 public class _Enemies
 {
-	public Dictionary<string,_Enemy> Enemies = new Dictionary<string,_Enemy>();
+	public Dictionary<string,_Enemy> Enemies;
 }
 
 [Serializable]
@@ -18,11 +18,11 @@ public class _Enemy
 	[JsonProperty("dmg")]
 	public int dmg {get;set;}
 	
-	[JsonProperty("magic_penetration")]
-	public float magic_penetration {get;set;}
+	[JsonProperty("magicPenetration")]
+	public float magicPenetration {get;set;}
 
-	[JsonProperty("magic_resistance")]
-	public float magic_resistance {get;set;}
+	[JsonProperty("magicResistance")]
+	public float magicResistance {get;set;}
 	
 	[JsonProperty("health")]
 	public int health {get;set;}
@@ -39,9 +39,15 @@ public class _Enemy
 	[JsonProperty("magic")]
 	public string magic {get;set;}
 	
-	[JsonProperty("sprite")]
-	public string sprite {get;set;}
+	[JsonProperty("magicCool")]
+	public float mgcCool {get;set;}
+	
+	[JsonProperty("prefab")]
+	public string prefab {get;set;}
+	
+	[JsonProperty("maxDrop")]
+	public int maxDrop {get;set;}
 	
 	[JsonProperty("reward")]
-	public Dictionary<string,float> reward {get;set;}
+	public Dictionary<string,int> reward {get;set;}
 }

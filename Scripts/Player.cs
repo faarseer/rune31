@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
 		set { _presentMagic = value; }
 	}
 	
+	public GameObject enemies;
+
 	void Awake()
 	{
 		if(instance != null)
@@ -82,6 +84,12 @@ public class Player : MonoBehaviour
 		eqpAvaPool = EqpAvaPool.instance;
 		chrAvaPool = ChrAvaPool.instance;
 		PresentPlayer();
+		
+		foreach(MagicViewer mv in enemies.GetComponentsInChildren<MagicViewer>())
+		{
+			mv.OnHit += OnMagicHit;
+		}
+
 	}
 
 	public delegate void OnPlayerDeadEvent();
@@ -96,16 +104,15 @@ public class Player : MonoBehaviour
 		//Dead_Sign
 		//SceneManagement.SceneManager.LoadScene("InGame_Lose");
 	}
+	
+	void OnMagicHit(_Magic prMagic, GameObject beatObj, GameObject hitObj)
+	{
+	}
 
 	void PresentPlayer()
 	{
-		//플레이어가 자신의 캐릭터를 설정하면, 그게 json에 저장되고 불러옴.
-		//GameData/Player,GameData/Character, GameData/Equipment
 		string filepath = Application.dataPath + "/rune31/Scripts/GameData/";
 		_Player player = JsonConvert.DeserializeObject<_Player>(File.ReadAllText(filepath + "Player.json"));
-		//_Equipments Equipments_Data =JsonConvert.DeserializeObject<_Equipments>(File.ReadAllText(filepath + "Equipment.json"));
-		//_Characters Characters_Data = JsonConvert.DeserializeObject<_Characters>(File.ReadAllText(filepath + "Character.json"));
-		//_Character character = Characters_Data.Characters[Player_Data.character]; 
 		
 		_presentChr = chrAvaPool.avaPool[player.character];
 
@@ -124,9 +131,6 @@ public class Player : MonoBehaviour
 		_magicPenetration = _presentChr.magicPenetration;
 		_magicResistance = _presentChr.magicResistance;
 		_health = _presentChr.health;
-		
-		//이런 것들은 똑같은 작업이라 하나로 고쳐서..
-		//System.Reflection 써야할듯
 
 		var mpQuery = 
 			(from eqp in presentEqp
@@ -162,5 +166,4 @@ public class Player : MonoBehaviour
 		}
 		_dmg = (int)((float)_dmg*(1.0+_mdDmg));
 	}
-	
 }

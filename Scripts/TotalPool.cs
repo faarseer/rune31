@@ -31,6 +31,10 @@ public class TotalPool : MonoBehaviour
 		//Debug.Log(totalpool.Runes.Count);
 	}
 	
+	void Start()
+	{
+		Debug.Log("runeTotalPool: "+totalPool.Count);	
+	}
 	void OnChangeTotalPool(List<Rune> pool)
 	{
 		// reward에 의한 lock -> unlock

@@ -34,6 +34,11 @@ public class AvaPool : MonoBehaviour
 		//Debug.Log(avapool.Runes.Count);
 	}
 
+	void Start()
+	{
+		Debug.Log("runeAvaPool: "+avaPool.Count);	
+	}
+	
 	void OnChangeAvaPool(List<Rune> pool)
 	{
 		//reward에 의한 lock -> unlock

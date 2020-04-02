@@ -26,6 +26,12 @@ public class Rune
 	[JsonProperty("description")]
 	public string description {get;set;}
 	
+	[JsonProperty("tier")]
+	public int tier {get;set;}
+	
+	[JsonProperty("rewardProb")]
+	public int rewardProb {get;set;}
+	
 	[JsonProperty("sprite")]
 	public string sprite {get;set;}
 	

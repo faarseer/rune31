@@ -28,7 +28,6 @@ public class MgcTotalPool : MonoBehaviour
 		string jsons = File.ReadAllText(filepath);
 		totalPool = JsonConvert.DeserializeObject<_Magics>(jsons).Magics;
 		
-		
 		totalList = (from f in totalPool
 					from e in f.Value
 					from c in e.Value

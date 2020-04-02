@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 	EnmTotalPool enmTotalPool;
 	MgcTotalPool mgcTotalPool;
 	GameObject magicPrefab;
+	Enemies enemies;
 
 	private int _dmg;
 	private int _attDmg;
@@ -29,7 +30,9 @@ public class Enemy : MonoBehaviour
 	private _Magic _inherentMagic;
 	private _Enemy _presentEnemy;
 	private Sprite _enemyImg;
-	private float _mgcRate = 5.0f;
+	private float _mgcCool;
+	private int _maxDrop;
+	private Dictionary<string, int> _reward = new Dictionary<string, int>();
 
 	List<_Magic> mgcPool;
 
@@ -59,7 +62,11 @@ public class Enemy : MonoBehaviour
 		get { return _health; }
 		set {
 			_health = value;
-			if(health == 0) OnEnemyDead ();
+			if(health == 0)
+				{
+					OnEnemyDead (_maxDrop, _reward);
+					RemoveEnemy();
+				}
 		}
 	}
 	public int sheild {
@@ -83,9 +90,9 @@ public class Enemy : MonoBehaviour
 		get { return _enemyImg; }
 		set { _enemyImg = value; }
 	}
-	public float mgcRate {
-		get { return _mgcRate; }
-		set { _mgcRate = value; }
+	public float mgcCool {
+		get { return _mgcCool; }
+		set { _mgcCool = value; }
 	}
 
 	public Dictionary<string,float> reward = new Dictionary<string,float>();
@@ -97,7 +104,8 @@ public class Enemy : MonoBehaviour
 		player = Player.instance;
 		enmTotalPool = EnmTotalPool.instance;
 		mgcTotalPool = MgcTotalPool.instance;
-		magicViewer.GetComponent<MagicViewer>().OnHit += OnEnemyHitMagic;
+		magicViewer.GetComponent<MagicViewer>().OnHit += OnHitMagic;
+		enemies = Enemies.instance;
 	}
 	void Start()
 	{
@@ -126,6 +134,7 @@ public class Enemy : MonoBehaviour
 		}
 		else
 		{
+			AddEnemy();
 			//Debug.Log("in Enemy"+enmTotalPool.totalPool.Keys.Count);
 			_presentEnemy = enmTotalPool.totalPool[dungeon[0].enemy[areanum.ToString()]];
 			
@@ -141,37 +150,60 @@ public class Enemy : MonoBehaviour
 				_inherentMagic = inhQuery[0];
 			}
 			
-			_enemyImg = Resources.Load(String.Format("{0}",_presentEnemy.sprite), typeof(Sprite)) as Sprite;
+			_enemyImg = Resources.Load(String.Format("{0}",_presentEnemy.prefab), typeof(Sprite)) as Sprite;
 			GetComponent<SpriteRenderer>().sprite = _enemyImg;
+			
+			_magicPenetration = _presentEnemy.magicPenetration;
+			_magicResistance = _presentEnemy.magicResistance;
+			_health = _presentEnemy.health;
+			_attDmg = _presentEnemy.attackDmg;
+			_attRate = _presentEnemy.attackRate;
+			_mgcCool = _presentEnemy.mgcCool;
+			_maxDrop = _presentEnemy.maxDrop;
+			_reward = _presentEnemy.reward;
 		}
 	}
 	
+	private void AddEnemy()
+	{
+		enemies.enmCnt++;
+	}
+	
+	private void RemoveEnemy()
+	{
+		enemies.enmCnt--;
+	}
+		
+
 	public delegate void OnNormalAttackEvent(int dmg);
-	public event OnNormalAttackEvent OnNormalAttack;
+	public OnNormalAttackEvent OnNormalAttack;
 	
 	IEnumerator NormalAttack()
 	{
-		OnNormalAttack(_presentEnemy.attackDmg); // Player가 구독해야됨.
-		yield return new WaitForSeconds(_presentEnemy.attackRate);
+		OnNormalAttack(_attDmg); // Player가 구독해야됨.
+		yield return new WaitForSeconds(_attRate);
 	}
 	
-	void OnEnemyHitMagic(_Magic prMagic, GameObject hitObj)
+	void OnHitMagic(_Magic prMagic, GameObject beatObj, GameObject hitObj)
 	{
+		Player beater = beatObj.GetComponent<Player>();
+		int deal = (int)(beater.dmg *(1.0+player.mdDmg));
+		_health -= deal;
+		// GetComponent<Animator>(); ....
 		// dmg 공식 int dmg
 		// health -= dmg;
 	}
 	
 	public delegate void OnSpellMagicEvent (_Magic inhMagic);
-	public event OnSpellMagicEvent OnSpellMagic;
+	public OnSpellMagicEvent OnSpellMagic;
 	
-	void OnEnemyDead()
-	{
-	}
+	public delegate void OnEnemyDeadEvent(int mxDrp, Dictionary<string, int> rwd);
+	public OnEnemyDeadEvent OnEnemyDead;
 
 	IEnumerator SpellMagic()
 	{
 		OnSpellMagic(_inherentMagic);
-		yield return new WaitForSeconds(_mgcRate);
+		yield return new WaitForSeconds(_mgcCool);
 	}
 
 	IEnumerator Spell()

@@ -15,6 +15,9 @@ public class _Equipment
 	[JsonProperty("name")]
 	public string name {get;set;}
 	
+	[JsonProperty("dmg")]
+	public float dmg {get;set;}
+	
 	[JsonProperty("mdDmg")]
 	public float mdDmg {get;set;}
 
