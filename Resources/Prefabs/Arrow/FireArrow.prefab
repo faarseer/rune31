@@ -601,7 +601,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 1
-    size3D: 0
+    size3D: 1
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
@@ -1480,7 +1480,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 5eac7d76660cad240987b04d4459ee30, type: 3}
+    - sprite: {fileID: 21300000, guid: 437bccd6a14508f4086474887c1d30b8, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
